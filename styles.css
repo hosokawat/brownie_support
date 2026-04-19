@@ -183,6 +183,12 @@ p {
   font-weight: 700;
 }
 
+.download-label.active::before {
+  content: "✓ ";
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .download-button {
   display: inline-flex;
   align-items: center;
