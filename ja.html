@@ -31,10 +31,16 @@
         <article class="card" id="download">
           <h2>ダウンロード</h2>
           <p>ご利用中のOSに合わせてBrownieをダウンロードしてください。</p>
-          <ul>
-            <li><strong>macOS (Apple Silicon):</strong> <a href="https://github.com/hosokawat/brownie_support/releases/download/v2.2.0/Brownie-darwin-arm64-2.2.0.zip" class="button-link" target="_blank">v2.2.0 をダウンロード</a></li>
-            <li><strong>Windows:</strong> <a href="https://apps.microsoft.com/detail/9nm58600cm3c" class="button-link" target="_blank">Microsoft Store</a></li>
-          </ul>
+          <div class="download-buttons">
+            <div class="download-item">
+              <p class="download-label" id="label-macos">macOS (Apple Silicon)</p>
+              <a href="https://github.com/hosokawat/brownie_support/releases/download/v2.2.0/Brownie-darwin-arm64-2.2.0.zip" class="download-button" target="_blank">v2.2.0 をダウンロード</a>
+            </div>
+            <div class="download-item">
+              <p class="download-label" id="label-windows">Windows</p>
+              <a href="https://apps.microsoft.com/detail/9nm58600cm3c" class="download-button" target="_blank">Microsoft Store</a>
+            </div>
+          </div>
         </article>
 
         <article class="card" id="contact">
@@ -105,5 +111,24 @@
         Brownie サポートページ。v2.0 向けに更新。
       </p>
     </main>
+    <script>
+      // Detect user's OS and make the corresponding label bold
+      const userAgent = navigator.userAgent;
+      let userOS = '';
+
+      if (userAgent.includes('Mac')) {
+        userOS = 'macos';
+      } else if (userAgent.includes('Windows')) {
+        userOS = 'windows';
+      }
+
+      if (userOS === 'macos') {
+        const label = document.getElementById('label-macos');
+        if (label) label.classList.add('active');
+      } else if (userOS === 'windows') {
+        const label = document.getElementById('label-windows');
+        if (label) label.classList.add('active');
+      }
+    </script>
   </body>
 </html>

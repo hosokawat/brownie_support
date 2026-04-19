@@ -158,6 +158,56 @@ p {
   margin-top: 8px;
 }
 
+.download-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.download-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.download-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.download-label.active {
+  font-weight: 700;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 140, 0.3);
+  word-break: break-word;
+}
+
+.download-button:hover {
+  background: var(--accent-strong);
+  box-shadow: 0 8px 20px rgba(233, 30, 140, 0.4);
+  transform: translateY(-2px);
+}
+
 .faq-item + .faq-item {
   margin-top: 18px;
 }
@@ -187,6 +237,10 @@ p {
   }
 
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-buttons {
     grid-template-columns: 1fr;
   }
 
