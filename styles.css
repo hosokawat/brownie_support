@@ -180,6 +180,12 @@ p {
     border-radius: 20px;
   }
 
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
